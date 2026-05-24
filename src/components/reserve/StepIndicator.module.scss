@@ -1,0 +1,34 @@
+@use '../../styles/theme' as *;
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+.item {
+  flex: 1 1 auto;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid $bg-3;
+  border-radius: $r-m;
+  color: $white-4;
+  transition: border-color .3s, color .3s, background .3s;
+}
+.done {
+  border-color: $gold-line;
+  color: $white-2;
+  background: $gold-pale;
+}
+.num {
+  font-family: $f-min;
+  font-size: 1.1rem;
+  color: $gold;
+}
+.label {
+  font-size: .8rem;
+  letter-spacing: .08em;
+}

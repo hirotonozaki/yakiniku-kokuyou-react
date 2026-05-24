@@ -1,0 +1,82 @@
+@use '../../styles/theme' as *;
+
+.form { display: flex; flex-direction: column; gap: 18px; }
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  @include md { grid-template-columns: 1fr 1fr; }
+}
+.group { display: flex; flex-direction: column; gap: 8px; }
+.label {
+  font-family: $f-ui;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  color: $white-3;
+}
+.req { color: $gold; margin-left: 4px; }
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: $bg;
+  border: 1px solid $gold-line;
+  border-radius: $r-m;
+  color: $white;
+  font-family: $f-jp;
+  font-size: .9rem;
+  transition: border-color .16s, box-shadow .16s;
+  &::placeholder { color: $white-5; }
+  &:focus { outline: none; border-color: $gold; box-shadow: 0 0 0 3px rgba(201, 168, 76, .12); }
+}
+.textarea { resize: vertical; line-height: 1.7; }
+.selectWrap {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 16px; top: 50%;
+    width: 8px; height: 8px;
+    border-right: 1px solid $gold;
+    border-bottom: 1px solid $gold;
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+  }
+}
+.select { appearance: none; cursor: pointer; }
+
+.err { font-size: .72rem; color: #d98a7e; }
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: .82rem;
+  color: $white-2;
+  input { position: absolute; opacity: 0; width: 0; height: 0; }
+}
+.checkBox {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  border: 1px solid $gold-line;
+  border-radius: 4px;
+  margin-top: 1px;
+  position: relative;
+  transition: background .16s, border-color .16s;
+}
+.check input:checked + .checkBox {
+  background: $gold;
+  border-color: $gold;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 6px; top: 2px;
+    width: 5px; height: 10px;
+    border-right: 2px solid $bg;
+    border-bottom: 2px solid $bg;
+    transform: rotate(45deg);
+  }
+}
+.check input:focus-visible + .checkBox { outline: 2px solid $gold; outline-offset: 2px; }
+.checkText { line-height: 1.6; }

@@ -1,0 +1,39 @@
+@use '../../styles/theme' as *;
+
+.placeholder {
+  padding: 28px 0;
+  text-align: center;
+  color: $white-4;
+  font-size: .85rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  @include md { grid-template-columns: repeat(4, 1fr); }
+}
+.slot {
+  position: relative;
+  padding: 14px 6px;
+  border: 1px solid $gold-line;
+  border-radius: $r-m;
+  background: $bg-2;
+  color: $white-2;
+  font-family: $f-min;
+  font-size: 1.05rem;
+  letter-spacing: .04em;
+  transition: background .16s, border-color .16s, color .16s, transform .16s;
+  &:hover:not(:disabled) { border-color: $gold; transform: translateY(-1px); }
+  &:disabled { opacity: .35; cursor: not-allowed; }
+}
+.active { background: $gold; color: $bg; border-color: $gold; }
+.few { border-color: rgba(201, 168, 76, .5); }
+.tag {
+  display: block;
+  margin-top: 2px;
+  font-family: $f-ui;
+  font-size: .54rem;
+  letter-spacing: .08em;
+  color: $gold;
+}
+.active .tag { color: $bg; }

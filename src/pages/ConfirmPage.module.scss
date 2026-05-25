@@ -1,0 +1,40 @@
+@use '../styles/theme' as *;
+
+.page {
+  padding-top: calc(#{$header-h} + clamp(36px, 5vw, 64px));
+  padding-bottom: clamp(72px, 9vw, 130px);
+}
+.inner { max-width: 680px; margin-inline: auto; }
+.head { text-align: center; margin-bottom: clamp(28px, 4vw, 44px); }
+.label {
+  font-family: $f-ui; font-size: .62rem; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase; color: $gold;
+}
+.title { font-family: $f-min; font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: .1em; color: $white; margin-top: 10px; }
+.rule { display: block; width: 48px; height: 1px; margin: 18px auto; background: linear-gradient(90deg, transparent, $gold, transparent); }
+.lead { font-size: .86rem; line-height: 1.9; color: $white-2; }
+
+.list {
+  background: $bg-1;
+  border: 1px solid $gold-line;
+  border-radius: $r-l;
+  overflow: hidden;
+}
+.row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  padding: 16px clamp(18px, 3vw, 26px);
+  border-bottom: 1px solid $bg-3;
+  &:last-child { border-bottom: none; }
+  dt { font-family: $f-ui; font-size: .68rem; letter-spacing: .08em; color: $gold; padding-top: 3px; }
+  dd { font-family: $f-jp; font-size: .92rem; color: $white; line-height: 1.7; word-break: break-word; }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: clamp(28px, 4vw, 44px);
+}

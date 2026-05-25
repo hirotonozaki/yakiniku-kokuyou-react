@@ -1,0 +1,44 @@
+@use '../styles/theme' as *;
+
+.page {
+  padding-top: calc(#{$header-h} + clamp(36px, 5vw, 64px));
+  padding-bottom: clamp(72px, 9vw, 130px);
+}
+.head { text-align: center; margin-bottom: clamp(32px, 4vw, 52px); }
+.label {
+  font-family: $f-ui; font-size: .62rem; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase; color: $gold;
+}
+.title { font-family: $f-min; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: .1em; color: $white; margin-top: 10px; }
+.rule { display: block; width: 48px; height: 1px; margin: 18px auto; background: linear-gradient(90deg, transparent, $gold, transparent); }
+.lead { font-size: .88rem; line-height: 1.9; color: $white-2; }
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 32px);
+  @include lg { grid-template-columns: 1fr 360px; align-items: start; }
+}
+.main { display: flex; flex-direction: column; gap: 16px; }
+
+.card {
+  background: $bg-1;
+  border: 1px solid $gold-line;
+  border-radius: $r-l;
+  padding: clamp(20px, 3vw, 30px);
+}
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid $bg-3;
+}
+.cardNum {
+  font-family: $f-min;
+  font-size: 1.4rem;
+  color: $gold;
+  line-height: 1;
+}
+.cardTitle { font-family: $f-jp; font-size: 1.1rem; letter-spacing: .08em; color: $white; }
